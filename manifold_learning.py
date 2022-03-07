@@ -28,7 +28,7 @@ def plot_manifold(X, methods, color):
     print("%s: %.2g sec" % (label, time.time() - t0))
     ax = fig.add_subplot(2, 7, 2 + i + (i > 4))
     ax.scatter(Y[:, 0], Y[:, 1], c=color, cmap=plt.cm.Spectral)
-    ax.set_title("%s (%.2g sec)" % (label, t1 - t0))
+    ax.set_title("%s (%.2g sec)" % (label, time.time() - t0))
     ax.axis('tight')
   plt.savefig('./plots/manifold_' + str(round(time.time())) + '.png')
 
