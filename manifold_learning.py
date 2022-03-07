@@ -58,12 +58,12 @@ def plot_s_curve():
   plt.savefig('./plots/manifold_' + str(round(time.time())) + '.png')
 
 if __name__ == '__main__':
-  if len(sys.args) != 2:
-    print('usage: python3 %s <s_curve or mnist>' % (sys.args[0]))
+  if len(sys.argv) != 2:
+    print('usage: python3 %s <s_curve or mnist>' % (sys.argv[0]))
     sys.exit()
   
-  print('start plotting manifold of %s' % (sys.args[1]))
-  if sys.args[1] == 'mnist':
+  print('start plotting manifold of %s' % (sys.argv[1]))
+  if sys.argv[1] == 'mnist':
     plot_mnist()
   else:
     plot_s_curve()
