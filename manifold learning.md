@@ -95,7 +95,8 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 
 
 
-### Reference
+
+### References
 1. https://scikit-learn.org/stable/modules/manifold.html
 2. https://scikit-learn.org/stable/auto_examples/manifold/plot_lle_digits.html
 3. https://arxiv.org/pdf/1703.00395.pdf
