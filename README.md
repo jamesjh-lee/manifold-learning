@@ -4,6 +4,7 @@ The examples of manifold learning
 ## requirements (python packages)
 - tensorflow 2.x
 - scikit-learn
+- matplotlib
 
 ## usage
 python 3.5+
