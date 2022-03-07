@@ -11,12 +11,12 @@ n_neighbors = 10
 n_points = 1000
 
 def plot_manifold(X, methods, color):
-  fig = plt.figure(figsize=(30, 12))
+  fig = plt.figure(figsize=(30, 10))
   fig.suptitle("Manifold Learning with %i points, %i neighbors"
-               % (n_points, n_neighbors), fontsize=14)
+               % (n_points, n_neighbors), fontsize=36)
 
   # plot X(s-curve)
-  ax = fig.add_subplot(251, projection='3d')
+  ax = fig.add_subplot(271, projection='3d')
   ax.scatter(X[:, 0], X[:, 1], X[:, 2], c=color, cmap=plt.cm.Spectral)
   ax.view_init(4, -72)
   for i, (label, method) in enumerate(methods.items()):
@@ -29,7 +29,7 @@ def plot_manifold(X, methods, color):
     ax = fig.add_subplot(2, 7, 2 + i + (i > 4))
     ax.scatter(Y[:, 0], Y[:, 1], c=color, cmap=plt.cm.Spectral)
     ax.set_title("%s (%.2g sec)" % (label, time.time() - t0))
-    ax.axis('tight')
+  fig.tight_layout(pad=3.0)
   plt.savefig('./plots/manifold_' + str(round(time.time())) + '.png')
 
 if __name__ == '__main__':
