@@ -57,6 +57,9 @@ def plot_s_curve():
   fig.tight_layout(pad=3.0)
   plt.savefig('./plots/manifold_' + str(round(time.time())) + '.png')
 
+def plot_mnist():
+  print()
+ 
 if __name__ == '__main__':
   if len(sys.argv) != 2:
     print('usage: python3 %s <s_curve or mnist>' % (sys.argv[0]))
