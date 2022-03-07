@@ -9,6 +9,6 @@ The examples of manifold learning
 ## usage
 python 3.5+
 ```shell
-python3 manifold_learning.py 
+python3 manifold_learning.py <s_curve or mnist>
 ```
 above code saves plots about manifold into plots directory.
