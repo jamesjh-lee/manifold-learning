@@ -92,3 +92,13 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 - Environments
     - neighbors: 10
     - dimensionality reduction: 3d → 2d
+
+
+
+### Reference
+1. https://scikit-learn.org/stable/modules/manifold.html
+2. https://scikit-learn.org/stable/auto_examples/manifold/plot_lle_digits.html
+3. https://arxiv.org/pdf/1703.00395.pdf
+4. https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin
+5. http://videolectures.net/kdd2014_bengio_deep_learning/
+6. https://dmm613.wordpress.com/tag/machine-learning/
