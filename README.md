@@ -11,3 +11,4 @@ python 3.5+
 ```shell
 python3 manifold_learning.py 
 ```
+above code saves plots about manifold into plots directory.
