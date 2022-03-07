@@ -21,7 +21,10 @@ def plot_manifold(X, methods, color):
   ax.view_init(4, -72)
   for i, (label, method) in enumerate(methods.items()):
     t0 = time.time()
-    Y = method.fit_transform(X)
+    if method == 'AE' or method == 'VAE':
+      Y = method.fit_transform(X, shuffle=True, epochs=15, batch_size=100, verbose=0)
+    else:
+      Y = method.fit_transform(X)
     print("%s: %.2g sec" % (label, time.time() - t0))
     ax = fig.add_subplot(2, 7, 2 + i + (i > 4))
     ax.scatter(Y[:, 0], Y[:, 1], c=color, cmap=plt.cm.Spectral)
@@ -35,4 +38,24 @@ if __name__ == '__main__':
   
   # setup manifold methods
   methods = dict()
+  LLE = partial(manifold.LocallyLinearEmbedding,
+              n_neighbors=n_neighbors, n_components=n_components,
+              eigen_solver='auto')
+  
+  methods['PCA'] = PCA(n_components=n_components)
+  methods['LLE'] = LLE(method='standard')
+  methods['LTSA'] = LLE(method='ltsa')
+  methods['Hessian LLE'] = LLE(method='hessian')
+  methods['Modified LLE'] = LLE(method='modified')
+  methods['Isomap'] = manifold.Isomap(n_neighbors=n_neighbors,
+                                      n_components=n_components)
+  methods['MDS'] = manifold.MDS(n_components, max_iter=100, n_init=1)
+  methods['SE'] = manifold.SpectralEmbedding(n_components=n_components,
+                                             n_neighbors=n_neighbors)
+  methods['t-SNE'] = manifold.TSNE(n_components=n_components, init='pca',
+                                   random_state=0)
+  methods['AE'] = AE(n_components, X.shape[-1])
+  methods['VAE'] = VAE(n_components, X.shape[-1])
+  
+  plot_manifold(X, methods, color)
   
