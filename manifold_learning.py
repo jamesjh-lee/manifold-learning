@@ -11,7 +11,7 @@ n_neighbors = 10
 n_points = 1000
 
 def plot_manifold(X, methods, color):
-  fig = plt.figure(figsize=(20, 8))
+  fig = plt.figure(figsize=(30, 12))
   fig.suptitle("Manifold Learning with %i points, %i neighbors"
                % (n_points, n_neighbors), fontsize=14)
 
