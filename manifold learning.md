@@ -18,11 +18,11 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 
 ### Purpose
 
-- **data compression**
+- **data compression** \
     Lossy Image Compression with compressive Autoencoders \
     ![data_compression](https://user-images.githubusercontent.com/93747285/156995502-8c22fa96-67bf-4354-ba4d-2f571dc46a72.png)
     
-- **data visiualization**
+- **data visiualization** \
     t-distributed stochastic neighbor embedding (t-SNE) \
     ![tsne](https://user-images.githubusercontent.com/93747285/156995543-2aa1bb8b-6960-416e-9849-9c102615a7db.png)
 
@@ -82,7 +82,7 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 
 - Environments
     - neighbors: 10
-    - dimensionality reduction: 3d → 2d
+    - dimensionality reduction: 3d → 2d \
 ![manifold_1646643973](https://user-images.githubusercontent.com/93747285/157000893-0e8223cf-68d9-4024-acdb-72036b845ff7.png)
 
 ### Example 2) Mnist dataset
