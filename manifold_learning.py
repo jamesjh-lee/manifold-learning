@@ -21,7 +21,7 @@ def plot_manifold(X, methods, color):
   ax.view_init(4, -72)
   for i, (label, method) in enumerate(methods.items()):
     t0 = time.time()
-    if method == 'AE' or method == 'VAE':
+    if label == 'AE' or label == 'VAE':
       Y = method.fit_transform(X, shuffle=True, epochs=15, batch_size=100, verbose=0)
     else:
       Y = method.fit_transform(X)
