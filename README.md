@@ -1,2 +1,4 @@
 # manifold-learning
-example of manifold learning
+The examples of manifold learning
+
+
