@@ -21,26 +21,21 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 - **data compression**
     
     Lossy Image Compression with compressive Autoencoders
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/96adcd10-f59e-4fc2-ac22-781999bccb0c/Untitled.png)
+    ![data_compression](https://user-images.githubusercontent.com/93747285/156995502-8c22fa96-67bf-4354-ba4d-2f571dc46a72.png)
     
 - **data visiualization**
     
     t-distributed stochastic neighbor embedding (t-SNE)
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc2fae29-0208-4737-b517-76a5d1ae2349/Untitled.png)
-    
+    ![tsne](https://user-images.githubusercontent.com/93747285/156995543-2aa1bb8b-6960-416e-9849-9c102615a7db.png)
+
 - **to avoid curse of dimensionality**
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d01affff-e8e0-4460-bc75-6b3534224dd7/Untitled.png)
-    
+  ![curseofdimensionality](https://user-images.githubusercontent.com/93747285/156995606-692dd367-8c4e-4ef9-a1fe-aff1cdb8ba0b.png)
+        
 - **to extract important features**
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3aaf4986-c0dc-439d-80b9-85bfba19e861/Untitled.png)
-    
+  ![featureextraction](https://user-images.githubusercontent.com/93747285/156995704-f7a5c892-0064-4716-9ae1-467068282139.png)
+
 
 ### Methods
-
 - PCA(Principal Component Analysis)
     - the process of computing the principal components and using them to perform a change of basis on the data
 - LLE(Locally Linear Embedding)
@@ -84,13 +79,17 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
     - to use variational inference to find simple distribution to generate target data
 
 ### Example: S-curve dataset
-
 - dataset: S-curve
-    
-    ![download-1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2eea4adf-c8aa-4be4-9b7b-e33c14a49c2a/download-1.png)
-    
+  ![download](https://user-images.githubusercontent.com/93747285/156995801-7b620b48-78d8-410c-81ee-f552a93e918a.png)
+
 - Environments
     - neighbors: 10
     - dimensionality reduction: 3d → 2d
 
-![download.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/876a0457-ea68-41b0-8597-e82005bb45a6/download.png)
+### Example: Mnist dataset
+- dataset: mnist
+
+
+- Environments
+    - neighbors: 10
+    - dimensionality reduction: 3d → 2d
