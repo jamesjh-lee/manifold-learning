@@ -29,10 +29,10 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
     ![tsne](https://user-images.githubusercontent.com/93747285/156995543-2aa1bb8b-6960-416e-9849-9c102615a7db.png)
 
 - **to avoid curse of dimensionality**
- ![curseofdimensionality](https://user-images.githubusercontent.com/93747285/156995606-692dd367-8c4e-4ef9-a1fe-aff1cdb8ba0b.png)
+![curseofdimensionality](https://user-images.githubusercontent.com/93747285/157001282-1e67c790-968f-4c8b-9763-1c495e2bd6c3.png)
         
 - **to extract important features**
-  ![featureextraction](https://user-images.githubusercontent.com/93747285/156995704-f7a5c892-0064-4716-9ae1-467068282139.png)
+![featureextraction](https://user-images.githubusercontent.com/93747285/156995704-f7a5c892-0064-4716-9ae1-467068282139.png)
 
 
 ### Methods
@@ -80,12 +80,12 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 
 ### Example: S-curve dataset
 - dataset: S-curve
-  ![download-1](https://user-images.githubusercontent.com/93747285/157000862-563d44bb-0939-4fe7-8328-03f014d9f8ec.png)
+![download-1](https://user-images.githubusercontent.com/93747285/157001326-aa3bfa2c-0d68-43ff-b532-777503f1db9e.png)
 
 - Environments
     - neighbors: 10
     - dimensionality reduction: 3d → 2d
- ![manifold_1646643973](https://user-images.githubusercontent.com/93747285/157000893-0e8223cf-68d9-4024-acdb-72036b845ff7.png)
+![manifold_1646643973](https://user-images.githubusercontent.com/93747285/157000893-0e8223cf-68d9-4024-acdb-72036b845ff7.png)
 
 ### Example: Mnist dataset
 - dataset: mnist
