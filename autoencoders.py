@@ -191,7 +191,7 @@ class ConvolutionalVAE:
 
     def vae_loss(self, x, y):
         marginal_likelihood = tf.reduce_sum(x * tf.math.log(y) + (1 - x) * tf.math.log(1 - y), 1)
-        KL_divergence = 0.5 * tf.reduce_sum(tf.square(self.mu) + tf.square(self.sigma) - tf.math.log(1e-8 + tf.square(self.sigma)) - 1, 1)
+        KL_divergence = self.beta * tf.reduce_sum(tf.square(self.mu) + tf.square(self.sigma) - tf.math.log(1e-8 + tf.square(self.sigma)) - 1, 1)
         marginal_likelihood = tf.reduce_mean(marginal_likelihood)
         KL_divergence = tf.reduce_mean(KL_divergence)
         ELBO = marginal_likelihood - self.beta * KL_divergence

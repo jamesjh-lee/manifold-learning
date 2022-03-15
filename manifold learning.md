@@ -88,11 +88,13 @@ High-dimensional datasets can be very difficult to visualize. While data in two 
 ### Example 2) Mnist dataset
 - dataset: mnist
 
+![download](https://user-images.githubusercontent.com/93747285/158350009-edc75a38-a620-4c80-babf-1c79903e51bc.png)
 
 - Environments
     - neighbors: 10
     - dimensionality reduction: 3d → 2d
 
+![manifold_mnist_1647322722](https://user-images.githubusercontent.com/93747285/158350096-50f2e234-c645-4c26-9e6c-9508a93d45ee.png)
 
 
 
