@@ -35,15 +35,14 @@ class AE:
         hidden = Dense(1024, activation='relu')(self.inputs)
         for i in range(layers):
             hidden = downsample(hidden)
+        self.h = hidden.shape[-1]
         outputs = Dense(self.latent_dim, activation='relu')(hidden)
         return Model(inputs=self.inputs, outputs=outputs, name='Encoder')
 
     def __decoder(self, origin_dim, layers=2):
         inputs = Input(shape=(self.latent_dim))
+        hidden = Dense(self.h, activation='relu')(inputs)
         for i in range(layers):
-            if i == 0:
-                hidden = upsample(inputs)
-                continue
             hidden = upsample(hidden)
         hidden = Dense(1024, activation='relu')(hidden)
         outputs = Dense(origin_dim, activation='sigmoid')(hidden)
@@ -52,7 +51,7 @@ class AE:
     def fit(self, x, **kwargs):
         self._build_net(x.shape[-1])
         self.optimizer._hyper['learning_rate'] = self.learning_rate
-        self.model.compile(self.optimizer, loss=self.hyperparameter['loss'], metrics=['binary_crossentropy'])
+        self.model.compile(self.optimizer, loss=self.hyperparameter['loss'])
         hist = self.model.fit(x, x, **kwargs)
         print(len(hist.history['loss']), hist.history['loss'][-1])
 
@@ -98,6 +97,7 @@ class VAE:
         hidden = Dense(1024, activation='relu')(self.inputs)
         for i in range(layers):
             hidden = downsample(hidden)
+        self.h = hidden.shape[-1]
         self.mu = Dense(self.latent_dim, activation='relu')(hidden)
         self.sigma = Dense(self.latent_dim, activation='softplus')(hidden)
         z = Sampling()([self.mu, self.sigma])
@@ -105,13 +105,10 @@ class VAE:
 
     def __decoder(self, origin_dim, layers=2):
         inputs = Input(shape=(self.latent_dim))
+        hidden = Dense(self.h, activation='relu')(inputs)
         for i in range(layers):
-            if i == 0:
-                hidden = upsample(inputs)
-                continue
             hidden = upsample(hidden)
-        hidden = Dense(1024, activation='relu')(hidden)
-        outputs = Dense(origin_dim, activation='softplus')(hidden)
+        outputs = Dense(origin_dim, activation='sigmoid')(hidden)
         return Model(inputs=inputs, outputs=outputs, name='vDecoder')
 
     def vae_loss(self, x, y):

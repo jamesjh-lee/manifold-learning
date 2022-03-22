@@ -45,8 +45,8 @@ def plot_s_curve():
     methods['MDS'] = manifold.MDS(n_components, max_iter=100, n_init=1)
     methods['SE'] = manifold.SpectralEmbedding(n_components=n_components, n_neighbors=n_neighbors)
     methods['t-SNE'] = manifold.TSNE(n_components=n_components, init='pca', random_state=0)
-    methods['AE'] = AE(n_components, optimizer='adam', learning_rate=1e-4, loss='mae')
-    methods['VAE'] = VAE(n_components, optimizer='adam', learning_rate=1e-6, beta=.5)
+    methods['AE'] = AE(n_components, optimizer='adam', learning_rate=1e-4, loss='mse')
+    methods['VAE'] = VAE(n_components, optimizer='adam', learning_rate=1e-4, beta=.2)
   
     fig = plt.figure(figsize=(10, 30))
     fig.suptitle("Manifold Learning with %i points, %i neighbors"
@@ -59,9 +59,9 @@ def plot_s_curve():
     for i, (label, method) in enumerate(methods.items()):
         t0 = time.time()
         if label == 'AE':
-            Y = method.fit_transform(X, shuffle=True, epochs=5, batch_size=32, callbacks=[es, sched], verbose=0)
+            Y = method.fit_transform(X, shuffle=True, epochs=15, batch_size=1000, verbose=0)
         elif label == 'VAE':
-            Y = method.fit_transform(X, shuffle=True, epochs=10, batch_size=32, callbacks=[es, sched], verbose=0)
+            Y = method.fit_transform(X, shuffle=True, epochs=3, batch_size=1000, verbose=0)
         else:
             Y = method.fit_transform(X)
         print("%s: %.2g sec" % (label, time.time() - t0))
